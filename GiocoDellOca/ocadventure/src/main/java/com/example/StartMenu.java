@@ -9,6 +9,7 @@ public class StartMenu extends JFrame {
         super("Schermata iniziale");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1000, 800);
+        setResizable(false);
 
         ImageIcon backgroundIcon = new ImageIcon(getClass().getResource("/StartBackground.png"));
         Image background = backgroundIcon.getImage();

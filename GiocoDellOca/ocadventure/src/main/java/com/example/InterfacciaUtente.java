@@ -21,6 +21,7 @@ public class InterfacciaUtente extends JFrame {
         this.gioco = gioco;
         setTitle("Gioco dell'Oca");
         setSize(925, 775);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
     
@@ -57,6 +58,7 @@ public class InterfacciaUtente extends JFrame {
     
         logArea = new JTextArea(5, 20);
         logArea.setEditable(false);
+        logArea.setBackground(new Color(196, 164, 132));
     
         dadoLabel = new JLabel("Dado: 0");
         
@@ -73,9 +75,9 @@ public class InterfacciaUtente extends JFrame {
         int n = 8, m = 8, steps = n * m - 1;
     
         ImageIcon arrowRight = new ImageIcon(getClass().getResource("/frecciaDx.png"));
-        ImageIcon arrowDown = new ImageIcon(getClass().getResource("/frecciaGiu.png"));
+        ImageIcon arrowDown = new ImageIcon(getClass().getResource("/frecciaDown.png"));
         ImageIcon arrowLeft = new ImageIcon(getClass().getResource("/frecciaSx.png"));
-        ImageIcon arrowUp = new ImageIcon(getClass().getResource("/frecciaSu.png"));
+        ImageIcon arrowUp = new ImageIcon(getClass().getResource("/frecciaUp.png"));
 
         for (int i = 1; i <= steps; i++) {
             spiral[y][x] = i;
@@ -96,7 +98,7 @@ public class InterfacciaUtente extends JFrame {
                 if (spiral[row][col] == 0) continue;
                 JPanel panel = new JPanel();
                 panel.setBorder(BorderFactory.createLineBorder(Color.black));
-                panel.setBackground(Color.WHITE);
+                panel.setBackground(Color.CYAN);
                 panel.setSize(size, size);
                 panel.setLayout(new FlowLayout(FlowLayout.CENTER));
                 JLabel label = new JLabel(Integer.toString(spiral[row][col]));
@@ -194,6 +196,7 @@ public class InterfacciaUtente extends JFrame {
         dispose();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 600);
+        frame.setResizable(false);
     
         // Create a JPanel to hold the components
         JPanel panel = new JPanel();
