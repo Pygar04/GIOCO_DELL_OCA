@@ -16,6 +16,7 @@ public class InterfacciaUtente extends JFrame {
     private Map<Integer, JPanel> casellePanels;
     private JTextArea logArea;
     private JLabel dadoLabel;
+    
 
     public InterfacciaUtente(GiocoDellOca gioco) {
         this.gioco = gioco;
@@ -56,10 +57,9 @@ public class InterfacciaUtente extends JFrame {
             }
         });
     
-        logArea = new JTextArea(5, 20);
+        logArea = new BackgroundTextArea("/text.png");
         logArea.setEditable(false);
-        logArea.setBackground(new Color(196, 164, 132));
-    
+
         dadoLabel = new JLabel("Dado: 0");
         
         add(scrollPane, BorderLayout.CENTER);
